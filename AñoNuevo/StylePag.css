@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #008080; /* Fondo verde navideño */
+    color: white;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Mensaje navideño */
+.message {
+    position: absolute;
+    top: 5%; /* Ajustamos el título para que no se sobreponga a los muñecos */
+    width: 100%;
+    font-size: 6vw;
+    font-weight: bold;
+    z-index: 3;
+    margin: 0;
+}
+
+/* Contador */
+#countdown-timer {
+    font-size: 8vw; /* Tamaño más grande para el contador */
+    margin-top: 12%; /* Subimos el contador un poco más */
+    color: #ffcc00;
+    z-index: 3;
+}
+
+/* Copos de nieve */
+.snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* Los copos de nieve están por debajo de todo */
+}
+
+.snowflake {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall 5s linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    left: 20%;
+    animation-duration: 6s;
+}
+
+.snowflake:nth-child(2) {
+    width: 8px;
+    height: 8px;
+    left: 40%;
+    animation-duration: 7s;
+}
+
+.snowflake:nth-child(3) {
+    width: 12px;
+    height: 12px;
+    left: 60%;
+    animation-duration: 5s;
+}
+
+.snowflake:nth-child(4) {
+    width: 6px;
+    height: 6px;
+    left: 80%;
+    animation-duration: 8s;
+}
+
+.snowflake:nth-child(5) {
+    width: 14px;
+    height: 14px;
+    left: 10%;
+    animation-duration: 9s;
+}
+
+@keyframes snowfall {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+/* Muñeco de nieve */
+.snowman {
+    position: absolute;
+    bottom: 5%; /* Ajustamos la posición del muñeco */
+    z-index: 2; /* Muñeco por encima de los copos de nieve pero debajo del título */
+}
+
+/* Muñeco de nieve a la izquierda */
+.snowman.left {
+    left: 5%;
+}
+
+/* Muñeco de nieve a la derecha */
+.snowman.right {
+    right: 5%;
+}
+
+/* Cabeza del muñeco de nieve */
+.snowman-head {
+    position: absolute;
+    top: -3vw; /* Ajustamos la cabeza */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12vw;
+    height: 12vw;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* Ojos del muñeco de nieve */
+.snowman-eyes {
+    position: absolute;
+    top: 4vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 6vw;
+}
+
+.snowman-eye {
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: black;
+    border-radius: 50%;
+}
+
+/* Nariz del muñeco de nieve */
+.snowman-nose {
+    position: absolute;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2vw;
+    height: 2vw;
+    background-color: orange;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Cuerpo del muñeco de nieve */
+.snowman-body {
+    position: relative;
+    width: 18vw;
+    height: 30vw;
+    margin: 0 auto;
+}
+
+/* Parte media del muñeco */
+.snowman-middle {
+    width: 16vw;
+    height: 16vw;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 7vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Parte inferior del muñeco */
+.snowman-bottom {
+    width: 22vw;
+    height: 22vw;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 18vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Bufanda del muñeco de nieve */
+.snowman-scarf {
+    position: absolute;
+    background-color: #d32f2f;
+    width: 14vw;
+    height: 3vw;
+    top: 9vw; /* Ajustamos la bufanda */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2vw;
+    z-index: 2;
+}
+
+/* Botones del muñeco de nieve */
+.snowman-buttons {
+    position: absolute;
+    top: 15vw; /* Ajustamos la posición de los botones */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman-button {
+    width: 2.5vw;
+    height: 2.5vw;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.snowman-button.top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.snowman-button.bottom {
+    top: 3vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .message {
+        font-size: 8vw;
+    }
+
+    #countdown-timer {
+        font-size: 7vw;
+    }
+
+    .snowman-head {
+        width: 20vw;
+        height: 20vw;
+        top: -5vw; /* Ajuste en pantallas pequeñas */
+    }
+
+    .snowman-middle {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    .snowman-bottom {
+        width: 24vw;
+        height: 24vw;
+    }
+
+    .snowman-scarf {
+        width: 15vw;
+        height: 3vw;
+    }
+}
